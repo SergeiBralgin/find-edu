@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindEdu</title>
+    <link rel='icon' href='favicon.svg' type='image/svg+xml'>
+    <link rel="preload" href="font/inter-400.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="font/inter-500.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="font/inter-600.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="font/inter-700.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="font/inter-800.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel='stylesheet' href='./sass/style.scss'>
+</head>
+<body>
+<div class='overlay'></div>
+<header class='header'>
+    <!--  Если меню открыто, то добавляем классу header__wrapper--opened-menu и навигации по данной странице site-nav--opened  -->
+    <div class='header__wrapper'>
+        <div class='header__logo logo'>
+            <img class='logo__img' src='./image/logo.svg' alt='Логотип FindEdu'>
+            <span class='logo__text'>FindEdu</span>
+        </div>
+        <nav class='main-nav' aria-label='Навигация по страницам сервиса'>
+            <ul class='main-nav__list'>
+                <li class='main-nav__item'>
+                    <a class='main-nav__link main-nav__link--current' href='#'>Главная</a>
+                </li>
+                <li class='main-nav__item'>
+                    <a class='main-nav__link' href='#'>Курсы</a>
+                </li>
+                <li class='main-nav__item'>
+                    <a class='main-nav__link' href='#'>Блог</a>
+                </li>
+            </ul>
+        </nav>
+        <nav class='site-nav' aria-label='Навигация по курсам'>
+            <ul class='site-nav__list'>
+                <!-- Для открытия списка элемента навигации, добавить класс к тегу li site-nav__item--active -->
+                <li class='site-nav__item'>
+                    <button class='site-nav__button'>Дизайн</button>
+                    <ul class='site-nav__sublist'>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D анимация</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D MAX</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D-моделирование</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe After Effects</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe Illustrator</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe Photoshop</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Отрисовка иллюстраций</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D анимация</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D MAX</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D-моделирование</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe After Effects</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe Illustrator</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe Photoshop</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Отрисовка иллюстраций</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class='site-nav__item'>
+                    <button class='site-nav__button'>Программирование</button>
+                    <ul class='site-nav__sublist'>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D анимация</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D MAX</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D-моделирование</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe After Effects</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe Illustrator</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe Photoshop</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Отрисовка иллюстраций</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class='site-nav__item'>
+                    <button class='site-nav__button'>Аналитика</button>
+                    <ul class='site-nav__sublist'>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D анимация</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D MAX</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D-моделирование</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe After Effects</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe Illustrator</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe Photoshop</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Отрисовка иллюстраций</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class='site-nav__item'>
+                    <button class='site-nav__button'>Менеджмент</button>
+                    <ul class='site-nav__sublist'>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D анимация</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D MAX</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D-моделирование</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe After Effects</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe Illustrator</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe Photoshop</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Отрисовка иллюстраций</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class='site-nav__item'>
+                    <button class='site-nav__button'>Маркетинг</button>
+                    <ul class='site-nav__sublist'>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D анимация</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D MAX</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D-моделирование</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe After Effects</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe Illustrator</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe Photoshop</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Отрисовка иллюстраций</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class='site-nav__item'>
+                    <button class='site-nav__button'>Финансы</button>
+                    <ul class='site-nav__sublist'>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D анимация</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D MAX</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>3D-моделирование</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe After Effects</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe Illustrator</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Adobe Photoshop</a>
+                        </li>
+                        <li class='site-nav__subitem'>
+                            <a class='site-nav__link' href='#'>Отрисовка иллюстраций</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <button class='site-nav__toggle' type='button'>
+                <span class='visually-hidden'>Открыть/Закрыть навигацию</span>
+            </button>
+        </nav>
+    </div>
+</header>
+<main class='page-main'>
+    <h1 class='visually-hidden'>Сайт по подбору образовательных курсов</h1>
+    <!--    <div class='bg-decor'>-->
+    <!--        <div class='bg-decor__wrapper'>-->
+    <!--            <span class='bg-decor__ellipse bg-decor__ellipse&#45;&#45;1'></span>-->
+    <!--            <span class='bg-decor__ellipse bg-decor__ellipse&#45;&#45;2'></span>-->
+    <!--            <span class='bg-decor__ellipse bg-decor__ellipse&#45;&#45;3'></span>-->
+    <!--            <span class='bg-decor__ellipse bg-decor__ellipse&#45;&#45;4'></span>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <section class='hero'>
+        <div class='hero__wrapper'>
+            <div class='hero__content'>
+                <h2 class='hero__title'>
+                    FindEdu - все для выбора&nbsp;новой профессии
+                    в&nbsp;одном месте
+                </h2>
+                <p class='hero__description'>
+                    Изучение тем на вебинарах с преподавателями, личные консультации с наставником. После прохождения
+                    курса
+                    с&nbsp;наставником. После прохождения курса
+                </p>
+                <button class='hero__compare'>
+                    Сравнить курсы
+                    <span aria-hidden='true'></span>
+                </button>
+            </div>
+            <div class='hero__card card-course'>
+                <div class='card-course__content'>
+                    <div class='card-course__container'>
+                        <h3 class='card-course__title'>UX/UI designer</h3>
+                        <div class='card-course__stars stars-rating'>
+                            <span class='stars-rating__item stars-rating__item--active'></span>
+                            <span class='stars-rating__item stars-rating__item--active'></span>
+                            <span class='stars-rating__item stars-rating__item--active'></span>
+                            <span class='stars-rating__item stars-rating__item--active'></span>
+                            <span class='stars-rating__item stars-rating__item--active'></span>
+                        </div>
+                        <p class='card-course__price'>120 000 рублей</p>
+                    </div>
+                    <div class='card-course__container'>
+                        <p class='card-course__lead'>
+                            UX/UI-дизайнер — одна из самых
+                            востребованных профессий 2020 года
+                        </p>
+                        <span class='card-course__number-company'>1 561 компания</span>
+                    </div>
+                </div>
+                <ul class='card-course__companies'>
+                    <li class='card-course__company card-course__company--skillbox'>
+                        <img src='./image/skillbox.svg' width='24' height='24' alt='Логотип skillbox'>
+                        <span></span>
+                    </li>
+                    <li class='card-course__company card-course__company--skillfactory'>
+                        <img src='./image/skillfactory.svg' width='24' height='24' alt='Логотип skillfactory'>
+                        <span></span>
+                    </li>
+                    <li class='card-course__company card-course__company--geekbrains'>
+                        <img src='./image/geebrains.svg' width='24' height='24' alt='Логотип geekbrains'>
+                        <span></span>
+                    </li>
+                    <li class='card-course__company card-course__company--netology'>
+                        <img src='./image/netology.svg' width='24' height='24' alt='Логотип netology'>
+                        <span></span>
+                    </li>
+                    <li class='card-course__company card-course__company--skysmart'>
+                        <img src='./image/skysmart.svg' width='24' height='24' alt='Логотип skysmart'>
+                        <span></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class='directions'>
+        <div class='directions__wrapper'>
+            <h2 class='directions__title'>Направления</h2>
+            <!-- Что бы обойти отступы wrapper - нужно растянуть swiper на 100vw и сместить в левую часть экрана-->
+            <div class='directions__slider swiper'>
+                <ul class='directions__slider-wrapper swiper-wrapper'>
+                    <li class='directions__slide swiper-slide'>
+                        <a class='direction-card' href='#' data-theme='design'>
+                            <h3 class='direction-card__title'>Дизайн</h3>
+                            <ul class='direction-card__list'>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Web-дизайн</span>
+                                    <span class='direction-card__text'>Дизайн интерьеров</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>3D-моделирование</span>
+                                    <span class='direction-card__text'>Motion-дизайн</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Графический дизайн</span>
+                                    <span class='direction-card__text'>3D-анимация</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>UX/UI дизайн</span>
+                                    <span class='direction-card__text'>ArchiCAD</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Геймдизайн</span>
+                                    <span class='direction-card__text'>Adobe After Effects</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class='directions__slide swiper-slide'>
+                        <a class='direction-card' href='#' data-theme='programming'>
+                            <h3 class='direction-card__title'>Программирование</h3>
+                            <ul class='direction-card__list'>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Web-разработка</span>
+                                    <span class='direction-card__text'>DevOps</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>JavaScript-разработк</span>
+                                    <span class='direction-card__text'>ReactJS</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Мобильная разработка</span>
+                                    <span class='direction-card__text'>GIT</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Системное администрирование</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Верстка на HTML/CSS</span>
+                                    <span class='direction-card__text'>Unity</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class='directions__slide swiper-slide'>
+                        <a class='direction-card' href='#' data-theme='management'>
+                            <h3 class='direction-card__title'>Менеджмент</h3>
+                            <ul class='direction-card__list'>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Product-менеджмент</span>
+                                    <span class='direction-card__text'>Личностный рост</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Управление разработкой и IT</span>
+                                    <span class='direction-card__text'>AGile</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Бренд-менеджмент</span>
+                                    <span class='direction-card__text'>Запуск стартапов</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Финансовая аналитика</span>
+                                    <span class='direction-card__text'>Бухгалтерия</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Управление в SMM</span>
+                                    <span class='direction-card__text'>IT-рекрутмент</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class='directions__slide swiper-slide'>
+                        <a class='direction-card' href='#' data-theme='analytics'>
+                            <h3 class='direction-card__title'>Аналитика</h3>
+                            <ul class='direction-card__list'>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Data Science</span>
+                                    <span class='direction-card__text'>Продуктовая аналитика</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Web-аналитика</span>
+                                    <span class='direction-card__text'>Системная аналитика</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Бизнес-аналитика</span>
+                                    <span class='direction-card__text'>Аналитика на R</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Работа с Excel и Google таблицами</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Машинное обучение</span>
+                                    <span class='direction-card__text'>Нейронные сети</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class='directions__slide swiper-slide'>
+                        <a class='direction-card' href='#' data-theme='marketing'>
+                            <h3 class='direction-card__title'>Маркетинг</h3>
+                            <ul class='direction-card__list'>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Web-аналитика</span>
+                                    <span class='direction-card__text'>SMM-продвижение</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Интернет-маркетинг</span>
+                                    <span class='direction-card__text'>PR-менеджмент</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>SEO-продвижение</span>
+                                    <span class='direction-card__text'>Копирайтинг</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Контент-маркетинг</span>
+                                    <span class='direction-card__text'>SERM и репутация</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Маркетинговая аналитика</span>
+                                    <span class='direction-card__text'>Google Ads</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class='directions__slide swiper-slide'>
+                        <a class='direction-card' href='#' data-theme='finance'>
+                            <h3 class='direction-card__title'>Финансы</h3>
+                            <ul class='direction-card__list'>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Web-аналитика</span>
+                                    <span class='direction-card__text'>SMM-продвижение</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Интернет-маркетинг</span>
+                                    <span class='direction-card__text'>PR-менеджмент</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>SEO-продвижение</span>
+                                    <span class='direction-card__text'>Копирайтинг</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Контент-маркетинг</span>
+                                    <span class='direction-card__text'>SERM и репутация</span>
+                                </li>
+                                <li class='direction-card__item'>
+                                    <span class='direction-card__text'>Маркетинговая аналитика</span>
+                                    <span class='direction-card__text'>Google Ads</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </li>
+                </ul>
+                <div class='directions__navigation slider-navigation'>
+                    <button class='slider-navigation__button slider-navigation__button--prev' type='button'>
+                        <span class='visually-hidden'>Предыдущий слайд</span>
+                    </button>
+                    <button class='slider-navigation__button slider-navigation__button--next' type='button'>
+                        <span class='visually-hidden'>Следующий слайд</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class='promo-banner'>
+        <div class='promo-banner__wrapper'>
+            <h2 class='promo-banner__title'>Агрегируем курсы по самым актуальным темам для новичков и практикующих
+                специалистов</h2>
+            <div class='promo-banner__slider swiper'>
+                <ul class='promo-banner__slider-wrapper swiper-wrapper'>
+                    <li class='promo-banner__slide promo-banner__slide--active swiper-slide'>
+                        <div class='banner-slide' data-theme='users'>
+                            <div class='banner-slide__content'>
+                                <h3 class='banner-slide__title'>300+ довольных пользователей</h3>
+                                <p class='banner-slide__description'>
+                                    Дополнительно в этом методе есть кнопка «Объединить по строкам». С помощью неё
+                                    можно
+                                    объединить ячейки выбранного диапазона построчно.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class='promo-banner__slide swiper-slide'>
+                        <div class='banner-slide' data-theme='courses'>
+                            <div class='banner-slide__content'>
+                                <h3 class='banner-slide__title'>1000+ образовательных курсов</h3>
+                                <p class='banner-slide__description'>
+                                    Дополнительно в этом методе есть кнопка «Объединить по строкам». С помощью неё
+                                    можно
+                                    объединить ячейки выбранного диапазона построчно.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class='promo-banner__slide swiper-slide'>
+                        <div class='banner-slide' data-theme='mentors'>
+                            <div class='banner-slide__content'>
+                                <h3 class='banner-slide__title'>300+ довольных пользователей</h3>
+                                <p class='banner-slide__description'>
+                                    Дополнительно в этом методе есть кнопка «Объединить по строкам». С помощью неё
+                                    можно
+                                    объединить ячейки выбранного диапазона построчно.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class='promo-banner__slide swiper-slide' aria-hidden='true'>
+                        <div class='banner-slide' data-theme='users'>
+                            <div class='banner-slide__content'>
+                                <h3 class='banner-slide__title'>300+ довольных пользователей</h3>
+                                <p class='banner-slide__description'>
+                                    Дополнительно в этом методе есть кнопка «Объединить по строкам». С помощью неё
+                                    можно
+                                    объединить ячейки выбранного диапазона построчно.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class='promo-banner__slide swiper-slide' aria-hidden='true'>
+                        <div class='banner-slide' data-theme='courses'>
+                            <div class='banner-slide__content'>
+                                <h3 class='banner-slide__title'>1000+ образовательных курсов</h3>
+                                <p class='banner-slide__description'>
+                                    Дополнительно в этом методе есть кнопка «Объединить по строкам». С помощью неё
+                                    можно
+                                    объединить ячейки выбранного диапазона построчно.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class='promo-banner__slide swiper-slide' aria-hidden='true'>
+                        <div class='banner-slide' data-theme='mentors'>
+                            <div class='banner-slide__content'>
+                                <h3 class='banner-slide__title'>300+ довольных пользователей</h3>
+                                <p class='banner-slide__description'>
+                                    Дополнительно в этом методе есть кнопка «Объединить по строкам». С помощью неё
+                                    можно
+                                    объединить ячейки выбранного диапазона построчно.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class='promo-banner__navigation slider-navigation'>
+                    <button class='slider-navigation__button slider-navigation__button--prev' type='button'>
+                        <span class='visually-hidden'>Предыдущий слайд</span>
+                    </button>
+                    <button class='slider-navigation__button slider-navigation__button--next' type='button'>
+                        <span class='visually-hidden'>Следующий слайд</span>
+                    </button>
+                </div>
+            </div>
+            <div class='promo-banner__controls'>
+                <button class='promo-banner__button banner-control banner-control--active' type='button'
+                        data-theme='users' aria-disabled='true'>
+                    <span class='banner-control__decor-icon' aria-hidden='true'></span>
+                    <span class='banner-control__title'>Довольные пользователи</span>
+                    <span class='banner-control__description'>
+                        Изучение тем на вебинарах с преподавателями,
+                        наставником. После прохождения курса вы будете
+                    </span>
+                </button>
+                <button class='promo-banner__button banner-control' type='button' data-theme='courses' aria-disabled='false'>
+                    <span class='banner-control__decor-icon' aria-hidden='true'></span>
+                    <span class='banner-control__title'>Образовательные курсы</span>
+                    <span class='banner-control__description'>
+                        Изучение тем на вебинарах с преподавателями,
+                        наставником. После прохождения курса вы будете
+                    </span>
+                </button>
+                <button class='promo-banner__button banner-control' type='button' data-theme='mentors' aria-disabled='false'>
+                    <span class='banner-control__decor-icon' aria-hidden='true'></span>
+                    <span class='banner-control__title'>Менторы из больших компаний</span>
+                    <span class='banner-control__description'>
+                        Изучение тем на вебинарах с преподавателями,
+                        наставником. После прохождения курса вы будете
+                    </span>
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class='footer'>
+    <div class='footer__wrapper'>
+        <div class='footer__intro'>
+            <div class='footer__logo logo'>
+                <svg class='logo__img' width="23" height="27" viewBox="0 0 23 27" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_690_5250" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
+                          height="23">
+                        <rect y="7.65613" width="8.61201" height="16.1906" transform="rotate(-26.999 0 7.65613)"
+                              fill="#C4C4C4"/>
+                        <rect x="7.66504" y="13.3485" width="8.61201" height="16.1906"
+                              transform="rotate(-108.7 7.66504 13.3485)" fill="#C4C4C4"/>
+                    </mask>
+                    <g mask="url(#mask0_690_5250)">
+                        <circle cx="11.3689" cy="11.3248" r="6.23409" stroke="white" stroke-width="2"/>
+                        <circle cx="11.3689" cy="11.3248" r="6.23409" stroke="white" stroke-opacity="0.2"
+                                stroke-width="2"/>
+                    </g>
+                    <rect x="10.335" y="26.8262" width="4.82273" height="2.06688" transform="rotate(-90 10.335 26.8262)"
+                          fill="white"/>
+                </svg>
+                <span class='logo__text'>FindEdu</span>
+            </div>
+            <span class='footer__copyright'>© FindEdu 2022. <br>
+Все права защищены.</span>
+        </div>
+        <div class='footer__content'>
+            <div class='footer__container footer__container--categories'>
+                <h3 class='footer__subtitle'>Категории</h3>
+                <ul class='footer__list'>
+                    <li class='footer__item'>
+                        <a class='footer__link' href='#'>Дизайн</a>
+                    </li>
+                    <li class='footer__item'>
+                        <a class='footer__link' href='#'>Программирование</a>
+                    </li>
+                    <li class='footer__item'>
+                        <a class='footer__link' href='#'>Маркетинг</a>
+                    </li>
+                    <li class='footer__item'>
+                        <a class='footer__link' href='#'>Менеджмент</a>
+                    </li>
+                    <li class='footer__item'>
+                        <a class='footer__link' href='#'>Аналитика</a>
+                    </li>
+                </ul>
+            </div>
+            <div class='footer__container footer__container--directions'>
+                <h3 class='footer__subtitle'>Популярные направления</h3>
+                <ul class='footer__list'>
+                    <li class='footer__item'>
+                        <a class='footer__link' href='#'>Веб-разработка</a>
+                    </li>
+                    <li class='footer__item'>
+                        <a class='footer__link' href='#'>Java-разработка</a>
+                    </li>
+                    <li class='footer__item'>
+                        <a class='footer__link' href='#'>Python-разработка</a>
+                    </li>
+                    <li class='footer__item'>
+                        <a class='footer__link' href='#'>SMM-продвижение</a>
+                    </li>
+                    <li class='footer__item'>
+                        <a class='footer__link' href='#'>Графический дизайн</a>
+                    </li>
+                    <li class='footer__item'>
+                        <a class='footer__link' href='#'>Дизайн интерьеров</a>
+                    </li>
+                </ul>
+            </div>
+            <div class='footer__container footer__container--info'>
+                <h3 class='footer__subtitle'>Общая информация</h3>
+                <ul class='footer__list'>
+                    <li class='footer__item'>
+                        <a class='footer__link' href='#'>О проекте</a>
+                    </li>
+                    <li class='footer__item'>
+                        <a class='footer__link' href='#'>Политика конфиденциальности</a>
+                    </li>
+                    <li class='footer__item'>
+                        <a class='footer__link' href='#'>Пользовательское соглашение</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src='./js/directions-swiper.js' type='module'></script>
+<script src='./js/promo-banner-swiper.js' type='module'></script>
+<script src='js/site-nav-desktop.js' type='module'></script>
+<script src='js/site-nav-mobile.js' type='module'></script>
+<script src='js/banner.js' type='module'></script>
+</body>
+</html>

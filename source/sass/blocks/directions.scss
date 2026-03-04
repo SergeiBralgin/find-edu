@@ -1,0 +1,88 @@
+.directions__wrapper {
+  padding: 0 20px 100px 20px;
+}
+
+.directions__title {
+  @include h2;
+}
+
+.directions__slider {
+  margin-top: 42px;
+  margin-left: -20px;
+  width: 100vw;
+}
+
+.directions__slider-wrapper {
+  @include reset-list;
+  display: flex;
+}
+
+.directions__slide {
+  margin-top: 0;
+  min-width: calc(100% - 40px);
+  transition: margin-top 0.3s;
+}
+
+.directions__slide.swiper-slide-active {
+  margin-top: -14px;
+  transition: margin-top 0.3s;
+}
+
+.directions__navigation {
+  margin: 29px auto 0 auto;
+}
+
+@media (min-width: $width-tablet) {
+  .directions__wrapper {
+    padding: 0 45px 100px 45px;
+  }
+
+  .directions__slider {
+    margin-top: 35px;
+    margin-left: -45px;
+  }
+
+  .directions__slider-wrapper {
+    @include reset-list;
+    display: flex;
+  }
+
+  .directions__slide {
+    min-width: calc((100% - 90px - 15px) / 2); // Вычитается отступы от slideOffsetBefore и slideOffsetAfter, а так же отступ между слайдами
+  }
+
+  .directions__slide.swiper-slide-next {
+    margin-top: -19px;
+    transition: margin-top 0.3s;
+  }
+
+  .directions__navigation {
+    margin: 29px auto 0 auto;
+  }
+}
+
+@media (min-width: $width-desktop) {
+  .directions__wrapper {
+    padding: 0 100px 300px 100px;
+    max-width: 1480px;
+    margin: 0 auto;
+  }
+
+  .directions__slider {
+    max-width: 100%;
+    margin: 52px 0 0 0;
+  }
+
+  .directions__slider-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 45px 18px;
+  }
+
+  .directions__slide {
+    min-width: auto;
+    width: -clamp(390px, 414px);
+  }
+}
+

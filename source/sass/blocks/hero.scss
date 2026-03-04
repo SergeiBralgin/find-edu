@@ -1,0 +1,130 @@
+.hero__wrapper {
+  padding: 55px 20px 120px 20px;
+}
+
+.hero__title {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.hero__description {
+  font-size: 14px;
+  line-height: 143.4%;
+  color: #9E9E9E;
+  margin: 45px 0 0 0;
+  font-weight: 400;
+}
+
+.hero__compare {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  background-color: $color-secondary;
+  border: none;
+  padding: 0;
+  border-radius: 12px;
+  font-size: 14px;
+  color: $bg-color;
+  min-width: 191px;
+  min-height: 45px;
+  margin: 26px 0 0 0;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    transition: 0.3s;
+    box-shadow: 0 20px 40px -10px rgba(#486DD8, 60%);
+  }
+}
+
+.hero__compare span {
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  background-color: #678CF8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    content: "";
+    width: 11.6px;
+    height: 11.62px;
+    background-color: #FAFAFA;
+    mask-image: url("../../image/banner-courses-decor.svg");
+    mask-size: cover;
+  }
+}
+
+
+@media (min-width: $width-tablet) {
+  .hero__wrapper {
+    padding: 70px 45px 120px 45px;
+  }
+
+  .hero__title {
+    font-size: 32px;
+  }
+
+  .hero__description {
+    font-size: 16px;
+    margin: 30px 170px 0 0;
+  }
+
+  .hero__compare {
+    gap: 25px;
+    font-size: 16px;
+    min-width: 230px;
+    min-height: 50px;
+    margin: 45px 0 0 0;
+  }
+
+  .hero__compare span {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (min-width: $width-desktop) {
+  .hero__wrapper {
+    padding: 165px 100px 108px 100px;
+    max-width: 1480px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: calc((719 / 1280) * 100%) 1fr;
+  }
+
+  .hero__content {
+    padding-bottom: 227px;
+  }
+
+  .hero__title {
+    font-size: 50px;
+  }
+
+  .hero__description {
+    margin-top: 30px;
+    margin-right: clamp(150px, calc(150px + (256 - 150) * ((100vw - 1024px) / (1920 - 1024))), 256px);
+  }
+
+  .hero__compare {
+    min-width: clamp(230px, calc(230px + (306 - 230) * ((100vw - 1024px) / (1920 - 1024))), 306px);
+    min-height: 78px;
+    margin: 51px 0 0 1px;
+    border-radius: 20px;
+    padding: 0 46px 0 60px;
+    justify-content: space-between;
+  }
+
+  .hero__compare span {
+    width: 45px;
+    height: 45px;
+
+    &::after {
+      width: 18.11px;
+      height: 18.14px;
+    }
+  }
+}
