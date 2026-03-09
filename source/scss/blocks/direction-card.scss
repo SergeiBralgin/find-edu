@@ -1,0 +1,507 @@
+@media (min-width: $width-mobile) and (max-width: calc($width-desktop - 1px)) {
+  .direction-card[data-theme='design'] {
+    --bg-color: #82B4FF;
+    --secondary-color-text: #E6F0FF;
+    --third-color-text: #CDE1FF;
+    --fourth-color-text: #B4D2FF;
+    --fifth-color-text: #9BC3FF;
+    --padding: 37px 20px 52px 22px;
+    --decor-image: url("../../image/sprite/decor-design.svg");
+    --width-decor-image: 38px;
+  }
+
+  .direction-card[data-theme='programming'] {
+    --bg-color: #FF89AD;
+    --secondary-color-text: #FFE7EF;
+    --third-color-text: #FFD0DE;
+    --fourth-color-text: #FFB8CE;
+    --fifth-color-text: #FFA1BD;
+    --padding: 40px 24px 48.5px 22px;
+    --decor-image: url("../../image/sprite/decor-programming.svg");
+    --width-decor-image: 42px;
+  }
+
+  .direction-card[data-theme='management'] {
+    --bg-color: #FFCCBD;
+    --secondary-color-text: #FFF5F2;
+    --third-color-text: #FFEBE5;
+    --fourth-color-text: #FFE0D7;
+    --fifth-color-text: #FFD6CA;
+    --padding: 40px 24px 48.5px 22px;
+    --decor-image: url("../../image/sprite/decor-management.svg");
+    --width-decor-image: 38px;
+  }
+
+  .direction-card[data-theme='analytics'] {
+    --bg-color: #FF9EBB;
+    --secondary-color-text: #FFECF1;
+    --third-color-text: #FFD8E4;
+    --fourth-color-text: #FFC5D6;
+    --fifth-color-text: #FFB1C9;
+    --padding: 36px 22px 56px 22px;
+    --decor-image: url("../../image/sprite/decor-analytics.svg");
+    --width-decor-image: 40px;
+  }
+
+  .direction-card[data-theme='marketing'] {
+    --bg-color: #FFB985;
+    --secondary-color-text: #FFF1E7;
+    --third-color-text: #FFE3CE;
+    --fourth-color-text: #FFD5B6;
+    --fifth-color-text: #FFC79D;
+    --padding: 40px 24px 49px 22px;
+    --decor-image: url("../../image/sprite/decor-marketing.svg");
+    --width-decor-image: 43px;
+  }
+
+  .direction-card[data-theme='finance'] {
+    --bg-color: #6CB7F2;
+    --secondary-color-text: #E2F1FC;
+    --third-color-text: #C4E2FA;
+    --fourth-color-text: #A7D4F7;
+    --fifth-color-text: #89C5F5;
+    --padding: 37px 24px 52px 22px;
+    --decor-image: url("../../image/sprite/decor-finance.svg");
+    --width-decor-image: 33px;
+  }
+
+  .direction-card {
+    text-decoration: none;
+    display: block;
+    background-color: var(--bg-color);
+    border-radius: 35px;
+    padding: var(--padding);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .direction-card__title {
+    font-size: 18px;
+    color: $color-primary-light;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    font-weight: 500;
+    margin: 0;
+
+    &::before {
+      content: "";
+      width: var(--width-decor-image);
+      height: 37px;
+      background-image: var(--decor-image);
+      background-size: cover;
+    }
+  }
+
+  .direction-card__list {
+    @include reset-list;
+    margin: 44px 0 0 0;
+  }
+
+  .direction-card__item {
+    display: flex;
+    justify-content: space-between;
+    gap: 7px;
+  }
+
+  .direction-card__text {
+    font-size: 14px;
+    line-height: 160%;
+    color: $color-primary-light;
+    font-weight: 400;
+    text-wrap: nowrap;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-clip: text;
+    width: 50%;
+    min-width: max-content;
+  }
+
+  .direction-card__text:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    &::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      mask-image: url("../../image/sprite/star-directions.svg");
+      mask-size: cover;
+      background-color: $color-primary-light;
+    }
+  }
+
+  // Первая строка списка в каждом слайде
+  .direction-card__item:nth-child(1) .direction-card__text:nth-child(2) {
+    background-image: linear-gradient(to right, $color-primary-light 0%, transparent 100%);
+    color: transparent;
+  }
+
+  // Отличительные свойства
+  .direction-card[data-theme='programming'] .direction-card__item:nth-child(1) .direction-card__text:nth-child(2) {
+    background: none;
+    color: $color-primary-light;
+  }
+
+  // Вторая строка списка в каждом слайде
+  .direction-card__item:nth-child(2) .direction-card__text:nth-child(1) {
+    color: var(--secondary-color-text);
+  }
+
+  .direction-card__item:nth-child(2) .direction-card__text:nth-child(2) {
+    background-image: linear-gradient(to right, var(--secondary-color-text) 0%, var(--bg-color) 100%);
+    color: transparent;
+    opacity: 0.8;
+  }
+
+  // Отличительные свойства
+  .direction-card[data-theme='programming'] .direction-card__item:nth-child(2) .direction-card__text:nth-child(2) {
+    background: none;
+    color: var(--secondary-color-text);
+  }
+
+  .direction-card[data-theme='marketing'] .direction-card__item:nth-child(2) .direction-card__text:nth-child(2) {
+    background-image: linear-gradient(to right, $color-primary-light 0%, var(--bg-color) 100%)
+  }
+
+  // Третья строка списка в каждом слайде
+  .direction-card__item:nth-child(3) .direction-card__text:nth-child(1) {
+    color: var(--third-color-text);
+  }
+
+  .direction-card__item:nth-child(3) .direction-card__text:nth-child(2) {
+    background-image: linear-gradient(to right, var(--third-color-text) 0%, var(--bg-color) 100%);
+    opacity: 0.6;
+    color: transparent;
+  }
+
+  // Отличительные свойства
+  .direction-card[data-theme='programming'] .direction-card__item:nth-child(3) .direction-card__text:nth-child(2) {
+    background: none;
+    color: var(--third-color-text);
+    opacity: 0.6;
+  }
+
+  .direction-card[data-theme='marketing'] .direction-card__item:nth-child(3) .direction-card__text:nth-child(2) {
+    background-image: linear-gradient(to right, $color-primary-light 0%, var(--bg-color) 100%)
+  }
+
+  // Четвертая строка списка в каждом слайде
+  .direction-card__item:nth-child(4) .direction-card__text:nth-child(1) {
+    color: var(--fourth-color-text);
+  }
+
+  .direction-card__item:nth-child(4) .direction-card__text:nth-child(2) {
+    background-image: linear-gradient(to right, var(--fourth-color-text) 0%, var(--bg-color) 100%);
+    opacity: 0.4;
+    color: transparent;
+  }
+
+  // Отличительные свойства
+  .direction-card[data-theme='design'] .direction-card__item:nth-child(4) .direction-card__text:nth-child(2) {
+    background: none;
+    color: $color-primary-light;
+    opacity: 0.4;
+  }
+
+
+  .direction-card[data-theme='programming'] .direction-card__item:nth-child(4) .direction-card__text:nth-child(2) {
+    background: none;
+    color: var(--fourth-color-text);
+  }
+
+  .direction-card[data-theme='marketing'] .direction-card__item:nth-child(4) .direction-card__text:nth-child(2) {
+    background-image: linear-gradient(to right, $color-primary-light 0%, transparent 100%)
+  }
+
+  // Пятая строка списка в каждом слайде
+  .direction-card__item:nth-child(5) .direction-card__text:nth-child(1) {
+    color: var(--fifth-color-text);
+  }
+
+  .direction-card__item:nth-child(5) .direction-card__text:nth-child(2) {
+    background-image: linear-gradient(to right, var(--fourth-color-text) 0%, var(--bg-color) 100%);
+    opacity: 0.2;
+    color: transparent;
+  }
+
+  // Отличительные свойства
+  .direction-card[data-theme='design'] .direction-card__item:nth-child(5) .direction-card__text:nth-child(2) {
+    background-image: linear-gradient(to right, $color-primary-light 0%, transparent 100%);
+  }
+
+  .direction-card[data-theme='programming'] .direction-card__item:nth-child(5) .direction-card__text:nth-child(2) {
+    background: none;
+    color: var(--fifth-color-text);
+    opacity: 1;
+
+    &::before {
+      background-color: var(--fifth-color-text);
+    }
+  }
+
+  .direction-card[data-theme='management'] .direction-card__item:nth-child(5) .direction-card__text:nth-child(2) {
+    background-image: linear-gradient(to right, #FFE7E0 0%, var(--bg-color) 100%);
+    background-size: 100% 100%;
+  }
+}
+
+@media (min-width: $width-tablet) and (max-width: calc($width-desktop - 1px)) {
+  .direction-card[data-theme='design'] {
+    --padding: 37px 45px 52px 45px;
+  }
+
+  .direction-card[data-theme='programming'] {
+    --padding: 40px 45px 48.5px 45px;
+  }
+
+  .direction-card[data-theme='management'] {
+    --padding: 40px 45px 48.5px 45px;
+  }
+
+  .direction-card[data-theme='analytics'] {
+    --padding: 36px 45px 56px 45px;
+  }
+
+  .direction-card[data-theme='marketing'] {
+    --padding: 40px 45px 49px 45px;
+  }
+
+  .direction-card[data-theme='finance'] {
+    --padding: 37px 45px 52px 45px;
+  }
+
+  .direction-card__list {
+    margin: 30px 0 0 0;
+  }
+}
+
+
+@media (min-width: $width-desktop) {
+  .direction-card[data-theme='design'] {
+    --bg-color: #82B4FF;
+    --secondary-color-text: #E6F0FF;
+    --third-color-text: #CDE1FF;
+    --fourth-color-text: #B4D2FF;
+    --fifth-color-text: #9BC3FF;
+    --padding: 60px 28px 95px 37px;
+    --decor-image: url("../../image/sprite/decor-design.svg");
+    --width-decor-image: 57px;
+    --gap-item: 21px;
+    --gap-star: 24.89px;
+  }
+
+  .direction-card[data-theme='programming'] {
+    --bg-color: #FF89AD;
+    --secondary-color-text: #FFE7EF;
+    --third-color-text: #FFD0DE;
+    --fourth-color-text: #FFB8CE;
+    --fifth-color-text: #FFA1BD;
+    --padding: 55px 45px 95px 35px;
+    --decor-image: url("../../image/sprite/decor-programming.svg");
+    --width-decor-image: 54px;
+    --gap-item: 28px;
+    --gap-star: 26px;
+  }
+
+  .direction-card[data-theme='management'] {
+    --bg-color: #FFCCBD;
+    --secondary-color-text: #FFF5F2;
+    --third-color-text: #FFEBE5;
+    --fourth-color-text: #FFE0D7;
+    --fifth-color-text: #FFD6CA;
+    --padding: 55px 20.5px 95px 28px;
+    --decor-image: url("../../image/sprite/decor-management.svg");
+    --width-decor-image: 54.2px;
+    --gap-item: 12px;
+    --gap-star: 12px;
+  }
+
+  .direction-card[data-theme='analytics'] {
+    --bg-color: #FF9EBB;
+    --secondary-color-text: #FFECF1;
+    --third-color-text: #FFD8E4;
+    --fourth-color-text: #FFC5D6;
+    --fifth-color-text: #FFB1C9;
+    --padding: 55px 16px 95px 35px;
+    --decor-image: url("../../image/sprite/decor-analytics.svg");
+    --width-decor-image: 60px;
+    --gap-item: 13px;
+    --gap-star: 16px;
+  }
+
+  .direction-card[data-theme='marketing'] {
+    --bg-color: #FFB985;
+    --secondary-color-text: #FFF1E7;
+    --third-color-text: #FFE3CE;
+    --fourth-color-text: #FFD5B6;
+    --fifth-color-text: #FFC79D;
+    --padding: 55px 25px 95px 29px;
+    --decor-image: url("../../image/sprite/decor-marketing.svg");
+    --width-decor-image: 64px;
+    --gap-item: 13px;
+    --gap-star: 13px;
+  }
+
+  .direction-card[data-theme='finance'] {
+    --bg-color: #6CB7F2;
+    --secondary-color-text: #E2F1FC;
+    --third-color-text: #C4E2FA;
+    --fourth-color-text: #A7D4F7;
+    --fifth-color-text: #89C5F5;
+    --padding: 55px 29px 95px 25px;
+    --decor-image: url("../../image/sprite/decor-finance.svg");
+    --width-decor-image: 50px;
+    --gap-item: 12px;
+    --gap-star: 13px;
+  }
+
+  .direction-card {
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    background-color: $color-primary-light;
+    border-radius: 35px;
+    padding: var(--padding);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: var(--bg-color);
+      transition: 0.3s;
+    }
+  }
+
+  .directions__slide--active .direction-card {
+    background-color: var(--bg-color);
+  }
+
+  .direction-card__title {
+    font-size: 25px;
+    color: #2F2828;
+    gap: -clamp(15px, 25px);
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    margin: 0;
+    max-width: 100%;
+    transition: 0.3s;
+
+    &::before {
+      content: "";
+      min-width: var(--width-decor-image);
+      height: 55px;
+      background-image: var(--decor-image);
+      background-size: cover;
+    }
+  }
+
+  .direction-card:hover .direction-card__title,
+  .directions__slide--active .direction-card__title {
+    color: $color-primary-light;
+    transition: 0.3s;
+  }
+
+  .direction-card__list {
+    @include reset-list;
+    margin: 75px 0 0 0;
+  }
+
+  .direction-card__item {
+    display: flex;
+    gap: var(--gap-item);
+  }
+
+  .direction-card__text {
+    font-size: -clamp(15px, 17px);
+    line-height: 160%;
+    color: #E1E1E1;
+    font-weight: 400;
+    transition: 0.3s;
+  }
+
+  .direction-card__item:nth-child(1) .direction-card__text {
+    color: $color-footer-link;
+  }
+
+  .direction-card__item:nth-child(2) .direction-card__text {
+    color: #898989;
+  }
+
+  .direction-card__item:nth-child(3) .direction-card__text {
+    color: #A6A6A6;
+  }
+
+  .direction-card__item:nth-child(4) .direction-card__text {
+    color: #C4C4C4;
+  }
+
+  .direction-card__text:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-star);
+
+    &::before {
+      content: "";
+      width: 15.5px;
+      height: 15.5px;
+      mask-image: url("../../image/sprite/star-directions.svg");
+      mask-size: 100%;
+      background-color: currentColor;
+      transition: 0.3s;
+    }
+  }
+
+  .direction-card:hover .direction-card__text,
+  .directions__slide--active .direction-card__text {
+    color: var(--fifth-color-text);
+  }
+
+  // Первая строка списка в каждом слайде
+  .direction-card:hover .direction-card__item:nth-child(1) .direction-card__text:nth-child(1),
+  .directions__slide--active .direction-card__item:nth-child(1) .direction-card__text:nth-child(1) {
+    color: $color-primary-light;
+  }
+
+  .direction-card:hover .direction-card__item:nth-child(1) .direction-card__text:nth-child(2),
+  .directions__slide--active .direction-card__item:nth-child(1) .direction-card__text:nth-child(2) {
+    color: $color-primary-light;
+  }
+
+  // Вторая строка списка в каждом слайде
+  .direction-card:hover .direction-card__item:nth-child(2) .direction-card__text:nth-child(1),
+  .directions__slide--active .direction-card__item:nth-child(2) .direction-card__text:nth-child(1) {
+    color: var(--secondary-color-text);
+  }
+
+  .direction-card:hover .direction-card__item:nth-child(2) .direction-card__text:nth-child(2),
+  .directions__slide--active .direction-card__item:nth-child(2) .direction-card__text:nth-child(2) {
+    color: var(--secondary-color-text);
+  }
+
+  // Третья строка списка в каждом слайде
+  .direction-card:hover .direction-card__item:nth-child(3) .direction-card__text:nth-child(1),
+  .directions__slide--active .direction-card__item:nth-child(3) .direction-card__text:nth-child(1) {
+    color: var(--third-color-text);
+  }
+
+  .direction-card:hover .direction-card__item:nth-child(3) .direction-card__text:nth-child(2),
+  .directions__slide--active .direction-card__item:nth-child(3) .direction-card__text:nth-child(2) {
+    color: var(--third-color-text);
+  }
+
+  // Четвертая строка списка в каждом слайде
+  .direction-card:hover .direction-card__item:nth-child(4) .direction-card__text:nth-child(1),
+  .directions__slide--active .direction-card__item:nth-child(4) .direction-card__text:nth-child(1) {
+    color: var(--fourth-color-text);
+  }
+
+  .direction-card:hover .direction-card__item:nth-child(4) .direction-card__text:nth-child(2),
+  .directions__slide--active .direction-card__item:nth-child(4) .direction-card__text:nth-child(2) {
+    color: var(--fourth-color-text);
+  }
+}

@@ -1,0 +1,162 @@
+.card-course {
+  grid-column-start: 2/3;
+  align-self: end;
+  background-color: $color-primary-light;
+  padding: 29px 28px 15px 17px;
+  max-width: clamp(390px, calc(390px + (488px - 390px) * ((100vw - 1024px) / (1920px - 1024px))), 488px);
+  border-radius: 19px;
+  border: 1px solid #E3E3E3;
+  position: relative;
+  display: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 188px;
+    left: -47px;
+    height: clamp(500px, calc(500px + (646px - 500px) * ((100vw - 1024px) / (1920px - 1024px))), 646px);
+    width: clamp(458px, calc(458px + (578px - 458px) * ((100vw - 1024px) / (1920px - 1024px))), 578px);
+    background-image: url("../../image/hero-decor-img.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+}
+
+.card-course__container {
+  display: flex;
+  gap: clamp(10px, calc(20px + (20px - 10px) * ((100vw - 1024px) / (1920px - 1024px))), 20px);
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 4px;
+    align-items: center;
+  }
+}
+
+.card-course__title {
+  font-size: clamp(16px, calc(16px + (20px - 16px) * ((100vw - 1024px) / (1920px - 1024px))), 20px);
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+}
+
+.card-course__price {
+  font-size: clamp(12px, calc(12px + (15px - 12px) * ((100vw - 1024px) / (1920px - 1024px))), 15px);
+  font-weight: 600;
+  margin: 0 0 0 auto;
+}
+
+.card-course__stars {
+  display: flex;
+  gap: 2.7px;
+}
+
+.stars-rating__item {
+  width: 13.5px;
+  height: 13.5px;
+  background-image: url("../../image/sprite/star.svg");
+}
+
+.card-course__lead {
+  color: #6F6E6E;
+  font-size: clamp(12px, calc(12px + (15px - 12px) * ((100vw - 1024px) / (1920px - 1024px))), 15px);
+  margin: 1px 0 0 0;
+  font-weight: 400;
+  max-width: max-content;
+}
+
+.card-course__number-company {
+  font-weight: 600;
+  color: rgba(#000000, 0.45);
+  font-size: clamp(12px, calc(12px + (15px - 12px) * ((100vw - 1024px) / (1920px - 1024px))), 15px);
+  text-wrap: nowrap;
+}
+
+.card-course__companies {
+  @include reset-list;
+  margin: 15px 0 0 0;
+}
+
+.card-course__company {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+
+.card-course__company span {
+  height: 17.5px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+  }
+}
+
+.card-course__company--skillbox span {
+  background-color: #DFE1FF;
+  width: 186px;
+
+  &::after {
+    width: 107px;
+    background-color: #323BE1;
+  }
+}
+
+.card-course__company--skillfactory span {
+  background-color: rgba(#82D97C, 0.31);
+  width: 273px;
+
+  &::after {
+    width: 192px;
+    background-color: #5CAF56;
+  }
+}
+
+.card-course__company--geekbrains span {
+  background-color: #E7E7E7;
+  width: 347px;
+
+  &::after {
+    width: 146px;
+    background-color: #222222;
+  }
+}
+
+.card-course__company--netology span {
+  background-color: #FFCFE0;
+  width: 276px;
+
+  &::after {
+    width: 208px;
+    background-color: #EB236B;
+  }
+}
+
+.card-course__company--skysmart span {
+  background-color: #CDEDFF;
+  width: 302px;
+
+  &::after {
+    width: 135px;
+    background-color: #54BFF9;
+  }
+}
+
+
+
+@media (min-width: $width-desktop) {
+  .card-course {
+    display: block;
+  }
+}

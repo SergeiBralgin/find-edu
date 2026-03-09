@@ -1,0 +1,4 @@
+// Функция для изменений значений в области от 1024px до 1920px, делая резину. Так же подойдет и для других значений - просто их необоходимо переопределить при вызове.
+@function -clamp ($min-value, $max-value, $start-width: 1024px, $end-width: 1920px) {
+  @return clamp($min-value, calc($min-value + (100vw - $start-width) * (($max-value - $min-value) / ($end-width - $start-width))), $max-value); // В calc - Формула интерполяции
+}
