@@ -16,6 +16,7 @@ import imageminSvgo from 'imagemin-svgo';
 import replace from 'gulp-replace';
 import svgSprite from 'gulp-svg-sprite';
 import * as esbuild from 'esbuild';
+import {deleteAsync} from 'del';
 
 const path = {
     source: {
@@ -89,7 +90,9 @@ const scss = () => {
     return gulp.src(path.source.scss.src, {sourcemaps: true}) // Ищет файл и создает карту кода
         .pipe(sass()) // Преобразует scss в css
         .pipe(replace('../../', '../'))
-        .pipe(postcss([autoprefixer()])) // Добавляет префексы для поддержки разных браузеров
+        .pipe(postcss([autoprefixer(
+
+        )])) // Добавляет префексы для поддержки разных браузеров
         .pipe(gulp.dest(path.source.css.folder, {sourcemaps: '.'})) // Складывает файлы в указанную папку и карту кода туда же
         .pipe(browserSync.stream()); // Обновляет страницу на случай, если он уже включен
 };
@@ -223,8 +226,10 @@ const watch = () => {
     gulp.watch(path.source.scss.watcher, scss);
 }
 
+const clean = () => deleteAsync(path.build.folder);
+
 const dev = gulp.series(scss, jsDev, gulp.parallel(watch, start));
-const build = gulp.series(scss, minifyHTML, minifyCss, jsBuild, optimizingRasterImages, createWebpImages, sprite, renamePathHtml, renamePathCss, copyFonts, copyFavicon);
+const build = gulp.series(clean, scss, minifyHTML, minifyCss, jsBuild, optimizingRasterImages, createWebpImages, sprite, renamePathHtml, renamePathCss, copyFonts, copyFavicon);
 
 export default dev;
 export {build, startBuild}
