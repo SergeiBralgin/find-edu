@@ -35,10 +35,11 @@ const path = {
                 folder: './source/image'
             },
             vectorImage: {
-                src: './source/image/**/*.svg',
-                watcher: './source/image/**/*.svg',
+                src: './source/image/sprite/*.svg',
+                watcher: './source/image/sprite/*.svg',
                 folder: './source/image/sprite'
-            }
+            },
+            folder: './source/image'
         },
         js: {
             src: './source/js/main.js',
@@ -72,7 +73,8 @@ const path = {
             vectorImage: {
                 folder: './dist/image/sprite',
                 src: './dist/image/sprite/*.svg',
-            }
+            },
+            folder: './dist/image'
         },
         fonts: {
             folder: './dist/fonts'
@@ -97,7 +99,7 @@ const scss = () => {
         .pipe(browserSync.stream()); // Обновляет страницу на случай, если он уже включен
 };
 
-// // Минифицирует css для build версии
+// Минифицирует css для build версии
 const minifyCss = () => {
     return gulp.src(path.source.css.src) // Ищет файл
         .pipe(cleanCSS()) // Минифицирует файлы css
@@ -105,7 +107,7 @@ const minifyCss = () => {
         .pipe(gulp.dest(path.build.css.folder)) // Складывает файлы в указанную папку
 }
 
-// JS
+// Сборка в один js файл всех модулей для build
 const jsDev = async () => {
     await esbuild.build({
         entryPoints: [path.source.js.src],
@@ -117,6 +119,7 @@ const jsDev = async () => {
     })
 }
 
+// Минифицирование и сборка в один js файл всех модулей для build
 const jsBuild = async () => {
     await esbuild.build({
         entryPoints: [path.source.js.src],
@@ -136,18 +139,23 @@ const minifyHTML = () => {
         .pipe(gulp.dest(path.build.folder))// Складывает файлы в указанную папку
 }
 
-// Копирование шрифтов и перенос в build
+// Перенос шрифтов в build
 const copyFonts = () => {
     return gulp.src(path.source.fonts.src, {encoding: false})
         .pipe(gulp.dest(path.build.fonts.folder))
 }
 
-// Копирование шрифтов и перенос в build
-const copyFavicon = () => {
+// Перенос favicon.ico в build
+const copyFaviconIco = () => {
     return gulp.src(path.source.folder + '/favicon.ico', {encoding: false})
         .pipe(gulp.dest(path.build.folder))
 }
 
+// Перенос favicon.svg в build
+const copyFaviconSvg = () => {
+    return gulp.src(path.source.image.folder + '/favicon.svg', {encoding: false})
+        .pipe(gulp.dest(path.build.image.folder))
+}
 
 // Редактирование путей в html
 const renamePathHtml = () => {
@@ -195,6 +203,7 @@ const optimizingRasterImages = () => {
         .pipe(gulp.dest(path.build.image.rasterImage.folder)); // Кладет обратно в source версию
 }
 
+// Создание webp и его оптимизация
 const createWebpImages = () => {
     return gulp.src(path.build.image.rasterImage.src) // Ищет изображения
         .pipe(webp()) // Создает webp изображения
@@ -229,7 +238,7 @@ const watch = () => {
 const clean = () => deleteAsync(path.build.folder);
 
 const dev = gulp.series(scss, jsDev, gulp.parallel(watch, start));
-const build = gulp.series(clean, scss, minifyHTML, minifyCss, jsBuild, optimizingRasterImages, createWebpImages, sprite, renamePathHtml, renamePathCss, copyFonts, copyFavicon);
+const build = gulp.series(clean, scss, minifyHTML, minifyCss, jsBuild, optimizingRasterImages, createWebpImages, sprite, renamePathHtml, renamePathCss, copyFonts, copyFaviconIco, copyFaviconSvg);
 
 export default dev;
 export {build, startBuild}
