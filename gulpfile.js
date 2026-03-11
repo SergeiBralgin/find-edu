@@ -11,12 +11,12 @@ import imagemin from 'gulp-imagemin';
 import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminPngquant from 'imagemin-pngquant';
 import webp from 'gulp-webp';
-import imageminWebp from 'imagemin-webp';
 import imageminSvgo from 'imagemin-svgo';
 import replace from 'gulp-replace';
 import svgSprite from 'gulp-svg-sprite';
 import * as esbuild from 'esbuild';
 import {deleteAsync} from 'del';
+import imageminWebp from 'imagemin-webp';
 
 const path = {
     source: {
@@ -42,9 +42,10 @@ const path = {
             folder: './source/image'
         },
         js: {
-            src: './source/js/main.js',
-            watcher: './source/js/**/*.js',
+            src: './source/js/modules/main.js',
+            watcher: './source/js/modules/*.js',
             folder: './source/js',
+            fileEsBuild: './source/js/main.js'
         },
         html: {
             src: './source/*.html',
@@ -67,7 +68,7 @@ const path = {
         },
         image: {
             rasterImage: {
-                src: './dist/image/*.{jpg,jpeg,png}',
+                src: './dist/image/*.{jpg,jpeg,png,webp}',
                 folder: './dist/image'
             },
             vectorImage: {
@@ -112,7 +113,7 @@ const jsDev = async () => {
     await esbuild.build({
         entryPoints: [path.source.js.src],
         bundle: true,
-        outfile: path.source.js.src,
+        outfile: path.source.js.fileEsBuild,
         sourcemap: true,
         allowOverwrite: true,
         format: 'iife',
@@ -137,24 +138,6 @@ const minifyHTML = () => {
     return gulp.src(path.source.html.src) // Ищет файл
         .pipe(htmlmin({collapseWhitespace: true})) // Минифицирует html
         .pipe(gulp.dest(path.build.folder))// Складывает файлы в указанную папку
-}
-
-// Перенос шрифтов в build
-const copyFonts = () => {
-    return gulp.src(path.source.fonts.src, {encoding: false})
-        .pipe(gulp.dest(path.build.fonts.folder))
-}
-
-// Перенос favicon.ico в build
-const copyFaviconIco = () => {
-    return gulp.src(path.source.folder + '/favicon.ico', {encoding: false})
-        .pipe(gulp.dest(path.build.folder))
-}
-
-// Перенос favicon.svg в build
-const copyFaviconSvg = () => {
-    return gulp.src(path.source.image.folder + '/favicon.svg', {encoding: false})
-        .pipe(gulp.dest(path.build.image.folder))
 }
 
 // Редактирование путей в html
@@ -198,17 +181,32 @@ const sprite = () => {
 // Оптимизация изображений
 const optimizingRasterImages = () => {
     return gulp.src(path.source.image.rasterImage.src, {encoding: false}) // Ищет изображения
-        .pipe(imagemin([imageminMozjpeg({quality: 75}), imageminPngquant()])) // Оптимизирует png, jpg и webp
+        .pipe(imagemin([imageminMozjpeg({quality: 75}), imageminPngquant(), imageminWebp()])) // Оптимизирует png, jpg и webp
         .pipe(gulp.dest(path.build.image.rasterImage.folder)); // Кладет обратно в source версию
 }
 
 // Создание webp и его оптимизация
 const createWebpImages = () => {
-    return gulp.src(path.build.image.rasterImage.src) // Ищет изображения
+    return gulp.src(path.source.image.rasterImage.src, {encoding: false}) // Ищет изображения
         .pipe(webp()) // Создает webp изображения
-        .pipe(imagemin([imageminWebp()])) // Оптимизирует png, jpg и webp
-        .pipe(gulp.dest(path.build.image.rasterImage.folder)); // Кладет обратно в source версию
+        .pipe(gulp.dest(path.source.image.rasterImage.folder)); // Кладет обратно в source версию
 }
+
+// Функция для переноса файла из одной папки в другую
+const fileTransfer = (file, transferFolder) => {
+    return gulp.src(file)
+        .pipe(gulp.dest(transferFolder))
+}
+
+// Перенос шрифтов в build
+const fontsTransfer = () => fileTransfer(path.source.fonts.src, path.build.fonts.folder);
+
+// Перенос favicon.ico в build
+const faviconIcoTransfer = () => fileTransfer(path.source.folder + '/favicon.ico', path.build.folder)
+
+// Перенос favicon.svg в build
+const faviconSvgTransfer = () => fileTransfer(path.source.image.folder + '/favicon.svg', path.build.image.folder)
+
 
 // Запуск сервера
 const start = () => {
@@ -230,14 +228,14 @@ const startBuild = () => {
 // Наблюдатели
 const watch = () => {
     gulp.watch(path.source.html.watcher).on('change', browserSync.reload);
-    gulp.watch(path.source.js.watcher).on('change', jsDev, browserSync.reload);
+    gulp.watch(path.source.js.watcher).on('change', gulp.series(jsDev, browserSync.reload));
     gulp.watch(path.source.scss.watcher, scss);
 }
 
 const clean = () => deleteAsync(path.build.folder);
 
 const dev = gulp.series(scss, jsDev, gulp.parallel(watch, start));
-const build = gulp.series(clean, scss, minifyHTML, minifyCss, jsBuild, optimizingRasterImages, createWebpImages, sprite, renamePathHtml, renamePathCss, copyFonts, copyFaviconIco, copyFaviconSvg);
+const build = gulp.series(clean, scss, minifyHTML, minifyCss, jsBuild, optimizingRasterImages, createWebpImages, sprite, renamePathHtml, renamePathCss, fontsTransfer, faviconIcoTransfer, faviconSvgTransfer);
 
 export default dev;
-export {build, startBuild}
+export {build, startBuild, createWebpImages}
