@@ -172,7 +172,6 @@ const renamePathCss = () => {
     return gulp.src(path.build.css.src)
         .pipe(replace('.svg', ''))
         .pipe(replace('../image/sprite/', '../image/sprite/sprite.svg#'))
-        // .pipe(replace('./js/modules/main.js', './main.min.js'))
         .pipe(gulp.dest(path.build.css.folder))
 }
 
@@ -242,6 +241,3 @@ const build = gulp.series(clean, scss, minifyHTML, minifyCss, jsBuild, optimizin
 
 export default dev;
 export {build, startBuild}
-
-// 6. Так же создать функцию переименовывания файлов для build версии (css, js, webp)
-// 7. Создать функцию для очистки файлов перед запуском build версии
