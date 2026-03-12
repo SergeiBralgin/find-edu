@@ -23,7 +23,7 @@
   },
   "scripts": {
     "dev": "gulp",
-    "build": "gulp build --build",
+    "build": "gulp build",
     "preview": "gulp startBuild",
     "createWebpImages": "gulp createWebpImages"
   },
