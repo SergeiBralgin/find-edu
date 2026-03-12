@@ -21,6 +21,15 @@
     background-repeat: no-repeat;
     z-index: -1;
   }
+
+  &::after {
+    background-image: image-set(
+                    url("../../image/hero-decor-img@2x.webp") 2x,
+                    url("../../image/hero-decor-img.webp") 1x,
+                    url("../../image/hero-decor-img@2x.png") 2x,
+                    url("../../image/hero-decor-img.png") 1x
+    );
+  }
 }
 
 .card-course__container {
@@ -152,7 +161,6 @@
     background-color: #54BFF9;
   }
 }
-
 
 
 @media (min-width: $width-desktop) {

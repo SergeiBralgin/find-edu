@@ -1,5 +1,8 @@
 .banner-slide[data-theme="users"] {
   --decor-image: url("../../image/promo-users-mobile.png");
+  --decor-image2x: url("../../image/promo-users-mobile@2x.png");
+  --decor-image-webp: url("../../image/promo-users-mobile.webp");
+  --decor-image-webp2x: url("../../image/promo-users-mobile@2x.webp");
   --width-decor-image: 277px;
   --height-decor-image: 249px;
   --decor-position-top: -76px;
@@ -7,6 +10,9 @@
 
 .banner-slide[data-theme="courses"] {
   --decor-image: url("../../image/promo-courses-mobile.png");
+  --decor-image2x: url("../../image/promo-courses-mobile@2x.png");
+  --decor-image-webp: url("../../image/promo-courses-mobile.webp");
+  --decor-image-webp2x: url("../../image/promo-courses-mobile@2x.webp");
   --width-decor-image: 280px;
   --height-decor-image: 280px;
   --decor-position-top: -50px;
@@ -14,6 +20,9 @@
 
 .banner-slide[data-theme="mentors"] {
   --decor-image: url("../../image/promo-mentors-mobile.png");
+  --decor-image2x: url("../../image/promo-mentors-mobile@2x.png");
+  --decor-image-webp: url("../../image/promo-mentors-mobile.webp");
+  --decor-image-webp2x: url("../../image/promo-mentors-mobile@2x.webp");
   --width-decor-image: 280px;
   --height-decor-image: 280px;
   --decor-position-top: -58px;
@@ -29,11 +38,22 @@
   &::before {
     content: "";
     background-image: var(--decor-image);
+    background-size: contain;
+    background-repeat: no-repeat;
     width: var(--width-decor-image);
     height: var(--height-decor-image);
     position: absolute;
     top: var(--decor-position-top);
     left: 0;
+  }
+
+  &::before {
+    background-image: image-set(
+                    var(--decor-image-webp2x) 2x,
+                    var(--decor-image-webp) 1x,
+                    var(--decor-image2x) 2x,
+                    var(--decor-image) 1x
+    );
   }
 }
 
@@ -79,6 +99,9 @@
 @media (min-width: $width-desktop) {
   .banner-slide[data-theme="users"] {
     --decor-image: url("../../image/promo-users-desktop.png");
+    --decor-image2x: url("../../image/promo-users-desktop@2x.png");
+    --decor-image-webp: url("../../image/promo-users-desktop.webp");
+    --decor-image-webp2x: url("../../image/promo-users-desktop@2x.webp");
     --width-decor-image: 424px;
     --height-decor-image: 383px;
     --decor-position-top: -128px;
@@ -91,6 +114,9 @@
 
   .banner-slide[data-theme="courses"] {
     --decor-image: url("../../image/promo-courses-desktop.png");
+    --decor-image2x: url("../../image/promo-courses-desktop@2x.png");
+    --decor-image-webp: url("../../image/promo-courses-desktop.webp");
+    --decor-image-webp2x: url("../../image/promo-courses-desktop@2x.webp");
     --width-decor-image: 425px;
     --height-decor-image: 425px;
     --decor-position-top: -117px;
@@ -103,6 +129,9 @@
 
   .banner-slide[data-theme="mentors"] {
     --decor-image: url("../../image/promo-mentors-desktop.png");
+    --decor-image2x: url("../../image/promo-mentors-desktop@2x.png");
+    --decor-image-webp: url("../../image/promo-mentors-desktop.webp");
+    --decor-image-webp2x: url("../../image/promo-mentors-desktop@2x.webp");
     --width-decor-image: 425px;
     --height-decor-image: 425px;
     --decor-position-top: -124px;

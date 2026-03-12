@@ -214,6 +214,7 @@
     background-color: $color-primary-light;
     position: static;
     display: flex;
+    flex-wrap: wrap;
     gap: 30px -clamp(15px, 48px);
     flex-direction: row;
     z-index: 1;
@@ -249,9 +250,9 @@
   }
 
   .site-nav__button {
-    gap: clamp(10px, calc(10px + (30 - 10) * ((100vw - 1024px) / (1920 - 1024))), 30px);
+    gap: clamp(10px, calc(10px + (30 - 10) * ((100vw - 1024px) / (1920 - 1024))), 24.7px);
     font-size: 16px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
   }
 
   .site-nav__toggle {

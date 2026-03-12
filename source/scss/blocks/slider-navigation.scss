@@ -20,6 +20,9 @@
     width: 7px;
     height: 12px;
     mask-image: url("../../image/sprite/arrow-nav.svg");
+    mask-size: cover;
+    mask-repeat: no-repeat;
+    mask-position: center;
     background-color: #2B2B2B;
   }
 }

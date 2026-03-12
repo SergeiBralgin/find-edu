@@ -396,7 +396,9 @@
       min-width: var(--width-decor-image);
       height: 55px;
       background-image: var(--decor-image);
-      background-size: cover;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
 
