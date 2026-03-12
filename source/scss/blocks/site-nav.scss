@@ -241,7 +241,7 @@
       height: 30px;
       min-width: 1px;
       background-color: #ECECEC;
-      margin-left: clamp(10px, calc(10px + (48 - 10) * ((100vw - 1024px) / (1920 - 1024))), 48px);
+      margin-left: clamp(10px, calc(10px + (48 - 10) * ((100vw - 1024px) / (1920 - 1024))), 47.8px);
     }
 
     &:first-child {

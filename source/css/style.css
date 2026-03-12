@@ -559,7 +559,7 @@ img {
     height: 30px;
     min-width: 1px;
     background-color: #ECECEC;
-    margin-left: clamp(10px, 10px + 38 * (100vw - 1024px) / 896, 48px);
+    margin-left: clamp(10px, 10px + 38 * (100vw - 1024px) / 896, 47.8px);
   }
   .site-nav__item:first-child {
     padding: 0;
