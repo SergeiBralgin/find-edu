@@ -18,7 +18,7 @@
   }
 }
 
-.footer__container--intro::after {
+.footer__intro::after {
   content: "";
   display: block;
   width: 100vw;
@@ -75,6 +75,10 @@
     flex-wrap: wrap;
   }
 
+  .footer__intro::after {
+    display: none;
+  }
+
   .footer__container {
     margin: 0;
 
@@ -89,13 +93,10 @@
     flex-grow: 1;
   }
 
-  .footer__container--intro::after {
-    display: none;
-  }
-
   .footer__list {
     margin: 40px 0 0 0;
   }
+
 }
 
 @media (min-width: $width-desktop) {

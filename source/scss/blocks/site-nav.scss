@@ -147,6 +147,12 @@
   text-decoration: none;
   font-weight: 400;
   text-align: start;
+  transition: 0.3s;
+
+  &:hover {
+    transition: 0.3s;
+    color: $color-secondary;
+  }
 }
 
 .site-nav__toggle {
@@ -252,7 +258,7 @@
   .site-nav__button {
     gap: clamp(10px, calc(10px + (30 - 10) * ((100vw - 1024px) / (1920 - 1024))), 24.7px);
     font-size: 16px;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.75px;
   }
 
   .site-nav__toggle {
