@@ -1,52 +1,32 @@
-//.bg-decor {
-//  width: 3023px;
-//  height: 1426px;
-//  position: absolute;
-//  top: 917px;
-//  left: -828px;
-//  z-index: -1;
-//  //display: block;
-//  //margin: 0 auto;
-//}
-//
-//.bg-decor__wrapper {
-//  position: relative;
-//  height: 100%;
-//}
-//
-//.bg-decor__ellipse {
-//  filter: blur(200px);
-//  position: absolute;
-//
-//  &--1 {
-//    width: 1758px;
-//    height: 1140px;
-//    background: radial-gradient(closest-side, rgba(#95BFFF, 69%) 0%, transparent 100%);
-//    left: 0;
-//    top: 161px;
-//  }
-//
-//  &--2 {
-//    width: 1608px;
-//    height: 1042px;
-//    background: radial-gradient(closest-side, rgba(#C495FF, 69%) 0%, transparent 100%);
-//    top: 47px;
-//    right: 0;
-//  }
-//
-//  &--3 {
-//    width: 1608px;
-//    height: 958px;
-//    background: radial-gradient(closest-side, rgba(#FFE895, 69%) 0%, transparent 100%);
-//    top: 0;
-//    left: 430px;
-//  }
-//
-//  &--4 {
-//    width: 1608px;
-//    height: 1042px;
-//    background: radial-gradient(closest-side, rgba(#B0FF95, 69%) 0%, transparent 100%);
-//    right: 220px;
-//    bottom: 0;
-//  }
-//}
+.page-main {
+  background-image: url("../../image/bg-decor-mobile.png");
+  background-image: image-set(
+                  url("../../image/bg-decor-mobile@2x.webp") 2x,
+                  url("../../image/bg-decor-mobile.webp") 1x,
+                  url("../../image/bg-decor-mobile@2x.png") 2x,
+                  url("../../image/bg-decor-mobile.png") 1x
+  );
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100%;
+}
+
+@media (min-width: $width-tablet) {
+  .page-main {
+    top: 87px
+  }
+}
+
+
+@media (min-width: $width-desktop) {
+  .page-main {
+    background-image: url("../../image/bg-decor-desktop.png");
+    background-image: image-set(
+                    url("../../image/bg-decor-desktop@2x.webp") 2x,
+                    url("../../image/bg-decor-desktop.webp") 1x,
+                    url("../../image/bg-decor-desktop@2x.png") 2x,
+                    url("../../image/bg-decor-desktop.png") 1x
+    );
+    background-position: 0 680px;
+  }
+}

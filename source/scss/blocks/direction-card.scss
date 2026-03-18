@@ -286,7 +286,7 @@
     --third-color-text: #CDE1FF;
     --fourth-color-text: #B4D2FF;
     --fifth-color-text: #9BC3FF;
-    --padding: 60px 28px 95px 37px;
+    --padding: 60px 28px 89px 37px;
     --decor-image: url("../../image/sprite/decor-design.svg");
     --width-decor-image: 57px;
     --gap-item: 21px;
@@ -314,7 +314,7 @@
     --fifth-color-text: #FFD6CA;
     --padding: 55px 20.5px 95px 28px;
     --decor-image: url("../../image/sprite/decor-management.svg");
-    --width-decor-image: 54.2px;
+    --width-decor-image: 56.4px;
     --gap-item: 12px;
     --gap-star: 12px;
   }
@@ -363,7 +363,7 @@
     text-decoration: none;
     display: block;
     background-color: $color-primary-light;
-    border-radius: 35px;
+    border-radius: 56px;
     padding: var(--padding);
     position: relative;
     overflow: hidden;
@@ -371,6 +371,7 @@
     transition: 0.3s;
 
     &:hover {
+      margin: -5px 0 0 0;
       background-color: var(--bg-color);
       transition: 0.3s;
     }
@@ -378,6 +379,7 @@
 
   .directions__slide--active .direction-card {
     background-color: var(--bg-color);
+    margin: -5px 0 0 0;
   }
 
   .direction-card__title {
@@ -396,10 +398,14 @@
       min-width: var(--width-decor-image);
       height: 55px;
       background-image: var(--decor-image);
-      background-size: contain;
+      background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
     }
+  }
+
+  .direction-card[data-theme='management'] .direction-card__title {
+    margin-left: 7px;
   }
 
   .direction-card:hover .direction-card__title,
@@ -410,12 +416,20 @@
 
   .direction-card__list {
     @include reset-list;
-    margin: 75px 0 0 0;
+    margin-top: 75px;
+  }
+
+  .direction-card[data-theme='programming'] .direction-card__list {
+    margin-left: 10px;
   }
 
   .direction-card__item {
     display: flex;
     gap: var(--gap-item);
+
+    &:not(:last-child) {
+      margin-bottom: 2.43px;
+    }
   }
 
   .direction-card__text {
@@ -452,7 +466,8 @@
       width: 15.5px;
       height: 15.5px;
       mask-image: url("../../image/sprite/star-directions.svg");
-      mask-size: 100%;
+      mask-size: cover;
+      mask-repeat: no-repeat;
       background-color: currentColor;
       transition: 0.3s;
     }

@@ -224,7 +224,7 @@
     gap: 30px -clamp(15px, 48px);
     flex-direction: row;
     z-index: 1;
-    padding: 45px 21px 0 0;
+    padding: 30px 21px 0 0;
     opacity: 1;
     height: max-content;
     visibility: visible;
@@ -259,6 +259,7 @@
     gap: clamp(10px, calc(10px + (30 - 10) * ((100vw - 1024px) / (1920 - 1024))), 24.7px);
     font-size: 16px;
     letter-spacing: 0.75px;
+    padding: 20px 0;
   }
 
   .site-nav__toggle {
@@ -266,7 +267,7 @@
   }
 
   .site-nav__sublist {
-    top: calc(100% + 30px);
+    top: calc(100% - 1px);
     left: 0;
     background-color: $color-primary-light;
     width: max-content;
@@ -282,7 +283,7 @@
     position: absolute;
   }
 
-  .site-nav__button:hover ~ .site-nav__sublist {
+  .site-nav__item:hover .site-nav__sublist {
     display: grid;
     opacity: 1;
     visibility: visible;
