@@ -1385,14 +1385,18 @@ img {
     transition: 0.3s;
   }
   .direction-card:hover {
-    margin: -5px 0 0 0;
+    -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+            transform: translateY(-5px);
     background-color: var(--bg-color);
     -webkit-transition: 0.3s;
     transition: 0.3s;
   }
   .directions__slide--active .direction-card {
     background-color: var(--bg-color);
-    margin: -5px 0 0 0;
+    -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+            transform: translateY(-5px);
   }
   .direction-card__title {
     font-size: 25px;
