@@ -371,7 +371,7 @@
     transition: 0.3s;
 
     &:hover {
-      margin: -5px 0 0 0;
+      transform: translateY(-5px);
       background-color: var(--bg-color);
       transition: 0.3s;
     }
@@ -379,7 +379,7 @@
 
   .directions__slide--active .direction-card {
     background-color: var(--bg-color);
-    margin: -5px 0 0 0;
+    transform: translateY(-5px);
   }
 
   .direction-card__title {
