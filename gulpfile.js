@@ -145,8 +145,7 @@ const minifyHTML = () => {
 const renamePathHtml = () => {
     return gulp.src(path.build.html.src)
         .pipe(replace('style.css', 'style.min.css'))
-        .pipe(replace('.svg', ''))
-        .pipe(replace('image/sprite/', 'image/sprite/sprite.svg#'))
+        .pipe(replace(/image\/sprite\/([a-zA-Z0-9_-]+)\.svg/g, 'image/sprite/sprite.svg#$1'))
         .pipe(replace('./js/main.js', './js/main.min.js'))
         .pipe(gulp.dest(path.build.folder))
 }
