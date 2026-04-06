@@ -1,6 +1,0 @@
-// Функция для изменений значений в области от 1024px до 1920px, делая резину. Так же подойдет и для других значений - просто их необоходимо переопределить при вызове.
-@function -clamp ($min-value, $max-value, $start-width: 1024px, $end-width: 1920px) {
-  // Вычисляем коэффициент наклона (безразмерное число) на этапе компиляции SCSS
-  $slope: ($max-value - $min-value) / ($end-width - $start-width);
-  @return clamp($min-value, calc($min-value + (100vw - $start-width) * $slope), $max-value);
-}
