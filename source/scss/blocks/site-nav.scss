@@ -221,10 +221,10 @@
     position: static;
     display: flex;
     flex-wrap: wrap;
-    gap: 30px -clamp(15px, 48px);
+    gap: 30px -clamp(15px, 47px);
     flex-direction: row;
     z-index: 1;
-    padding: 30px 21px 0 0;
+    padding: 30px 20px 0 0;
     opacity: 1;
     height: max-content;
     visibility: visible;
@@ -247,7 +247,7 @@
       height: 30px;
       min-width: 1px;
       background-color: #ECECEC;
-      margin-left: clamp(10px, calc(10px + (48 - 10) * ((100vw - 1024px) / (1920 - 1024))), 47.8px);
+      margin-left: -clamp(10px, 47.8px);
     }
 
     &:first-child {
@@ -256,8 +256,8 @@
   }
 
   .site-nav__button {
-    gap: clamp(10px, calc(10px + (30 - 10) * ((100vw - 1024px) / (1920 - 1024))), 24.7px);
-    font-size: 16px;
+    gap: -clamp(10px, 24px);
+    font-size: -clamp(15px, 16px);
     letter-spacing: 0.75px;
     padding: 20px 0;
   }

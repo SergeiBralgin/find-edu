@@ -107,7 +107,7 @@
 
   .hero__description {
     margin-top: 30px;
-    margin-right: clamp(150px, calc(150px + (256 - 150) * ((100vw - 1024px) / (1920 - 1024))), 256px);
+    margin-right: -clamp(150px, 256px);
   }
 
   .hero__compare {
